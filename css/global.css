@@ -20,6 +20,10 @@
     background: url(/img/wallpaper5.jpg) no-repeat;
     background-size: cover;
 }
+#calculator-background {
+    background: url(/img/wallpaper5.jpg) no-repeat;
+    background-size: cover;
+}
 
 /* NAVEGATION SIDEBAR */
 .header {
@@ -57,6 +61,11 @@
 }
 .user a p {
     margin-left: 15px;
+}
+.sidebar li {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: ease-in 0.5s all;
 }
 .sidebar li a p{
     display: none;
@@ -96,14 +105,16 @@ li a {
     display: block;
 }
 .sidebar:hover .user {
-    background-color: rgba(255, 123, 0, 0.5);;
+    background-color: rgba(255, 136, 0, 0.9);
     border-radius: 15px;
     backdrop-filter: blur(5px);
 }
 .sidebar:hover li {
-    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     backdrop-filter: blur(5px);
 }
-
+.sidebar li:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+    scale: 1.05;
+}
 /* HOVER EFFECT FOR LINKS */ 

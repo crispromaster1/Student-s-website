@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+
+    <!--CSS STYLE-->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/timer.css">
+</head>
+<body id="home-background">
+    
+    <!--HEADER, background: -->
+
+    <div class="header">
+        <div class="sidebar">
+            <div class="user">
+                <a href=""><img src="icons/user.png" class="user-img sidebar-icons"><p>Login</p></a>
+            </div>
+            <ul>
+                <li><a href="index.html"><img src="icons/home.png" class="sidebar-icons "><p>Home</p></a></li>
+                <li><a href="calculator.html"><img src="icons/calculator.png" class="sidebar-icons"><p>Calculator</p></a></li>
+                <li><a href="timer.html" class="active"><img src="icons/timer.png" class="sidebar-icons"><p>Timer</p></a></li>
+            </ul>
+            <ul>
+                <li><a href=""><img src="icons/logout.png" class="sidebar-icons"><p>Logout</p></a></li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <!--END OF HEADER-->
+
+    <!--MAIN CONTENT-->
+    <main>
+
+        <!--TIMER-->
+        <div class="container">
+            <div class="timer">
+                <div class="display">
+                    <input type="text" id="timer-display" value="00:00:00" disabled>
+                </div>
+                <div class="buttons">
+                    <button class="btn operator" id="start-btn">Start</button>
+                    <button class="btn operator" id="stop-btn">Stop</button>
+                    <button class="btn operator" id="reset-btn">Reset</button>
+                </div>
+            </div>
+        </div>
+        <script src="/js/timer.js"></script>
+
+
+    </main>
+    <!--END OF MAIN CONTENT-->
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <!--CSS STYLE-->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/calculator.css">
+</head>
+<body id="calculator-background">
+        <!--HEADER, background: -->
+
+        <div class="header">
+            <div class="sidebar">
+                <div class="user">
+                    <a href=""><img src="icons/user.png" class="user-img sidebar-icons"><p>Login</p></a>
+                </div>
+                <ul>
+                    <li><a href="index.html"><img src="icons/home.png" class="sidebar-icons "><p>Home</p></a></li>
+                    <li><a href="calculator.html" class="active"><img src="icons/calculator.png" class="sidebar-icons"><p>Calculator</p></a></li>
+                    <li><a href="timer.html"><img src="icons/timer.png" class="sidebar-icons"><p>Timer</p></a></li>
+                </ul>
+                <ul>
+                    <li><a href=""><img src="icons/logout.png" class="sidebar-icons"><p>Logout</p></a></li>
+                </ul>
+            </div>
+            
+        </div>
+    
+        <!--END OF HEADER-->
+
+        <!--MAIN CONTENT-->
+            <main>
+
+                <!--CALCULATOR-->
+                <div class="container">
+                    <div class="calculator">
+                        <div class="display">
+                            <input type="text" id="calc-display" disabled>
+                        </div>
+                        <div class="buttons">
+                            <button class="btn" data-value="7">7</button>
+                            <button class="btn" data-value="8">8</button>
+                            <button class="btn" data-value="9">9</button>
+                            <button class="btn operator" data-value="/">÷</button>
+                            <button class="btn" data-value="4">4</button>
+                            <button class="btn" data-value="5">5</button>
+                            <button class="btn" data-value="6">6</button>
+                            <button class="btn operator" data-value="*">×</button>
+                            <button class="btn" data-value="1">1</button>
+                            <button class="btn" data-value="2">2</button>
+                            <button class="btn" data-value="3">3</button>
+                            <button class="btn operator" data-value="-">−</button>
+                            <button class="btn" data-value="0">0</button>
+                            <button class="btn" data-value=".">.</button>
+                            <button class="btn operator" data-value="+">+</button>
+                            <button class="btn operator" data-value="=">=</button>
+                            <button class="btn operator clear" data-value="C">C</button>
+                        </div>
+                    </div>
+                    <div class="history">
+                        <h2>History</h2>
+                        <ul id="history-list"></ul>
+                        <button id="clear-history-btn" class="btn operator clear">Clear History</button>
+                    </div>
+                </div>
+                <script src="js/calculator.js"></script>
+
+                <!--END OF CALCULATOR-->
+
+
+            </main>
+
+</body>
+</html>
