@@ -1,0 +1,109 @@
+/* fonts
+
+*/
+
+/* default colors
+
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.sidebar-icons {
+    width: 50px;
+    height: 50px;
+}
+/* BACKGROUND*/
+#home-background {
+    background: url(/img/wallpaper5.jpg) no-repeat;
+    background-size: cover;
+}
+
+/* NAVEGATION SIDEBAR */
+.header {
+    height: 89.9vh;
+}
+.sidebar {
+    width: 80px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 30px 0px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border-right: solid 3px rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    opacity: 0.8;
+    transition: all 0.7s ease-in-out;
+}
+.user a p {
+    display: none;
+    color: black;
+}
+.user a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+}
+.user a p {
+    margin-left: 15px;
+}
+.sidebar li a p{
+    display: none;
+    color: black;
+    margin-left: 15px;
+}
+.sidebar ul {
+    padding: 0;
+}
+ul li {
+    list-style: none;
+    margin-top: 15px;
+}
+li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+}
+
+/* HOVER EFFECT FOR NAVEGATION SIDEBAR */
+
+.sidebar:hover {
+    width: 200px;
+    opacity: 1;
+    padding: 30px 15px;
+}
+.sidebar:hover .user a p{
+    display: block;
+}
+.sidebar:hover li a p{
+    display: block;
+}
+.sidebar:hover .user {
+    background-color: rgba(255, 123, 0, 0.5);;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+.sidebar:hover li {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+/* HOVER EFFECT FOR LINKS */ 
