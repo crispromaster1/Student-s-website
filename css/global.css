@@ -176,3 +176,67 @@ li a {
     scale: 1.05;
 }
 
+/* For mobile view */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        opacity: 1;
+        padding: 30px 15px;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    /* When the sidebar is active */
+    .sidebar.active {
+        left: 0;
+    }
+
+    /* Hamburger menu styling */
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        color: black;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 1000;
+    }
+
+    .header {
+        height: auto;
+    }
+
+    /* Disable hover effect on mobile */
+    .sidebar:hover {
+        width: 250px; /* Keep the expanded width consistent */
+    }
+
+    .sidebar:hover .user a p,
+    .sidebar:hover li a p {
+        display: block;
+    }
+}
+
+/* Desktop view */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+    
+    /* Sidebar hover effect */
+    .sidebar:hover {
+        width: 200px;
+        opacity: 1;
+        padding: 30px 15px;
+    }
+
+    .sidebar:hover .user a p,
+    .sidebar:hover li a p {
+        display: block;
+    }
+}
