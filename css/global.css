@@ -2,60 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-/*fonts
-.ubuntu-light {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.ubuntu-regular {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.ubuntu-medium {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.ubuntu-bold {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.ubuntu-light-italic {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.ubuntu-regular-italic {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.ubuntu-medium-italic {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.ubuntu-bold-italic {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-*/
-
-/* default colors
-
-*/
 
 * {
     padding: 0;
@@ -69,14 +15,12 @@
     width: 50px;
     height: 50px;
 }
-/* BACKGROUND*/
-#home-background {
-    background: url(/img/wallpaper5.jpg) no-repeat;
+/* BACKGROUND */
+#home-background, #calculator-background {
+    background: url(/img/wallpaper5.jpg) no-repeat center center fixed;
     background-size: cover;
-}
-#calculator-background {
-    background: url(/img/wallpaper5.jpg) no-repeat;
-    background-size: cover;
+    width: 100%;
+    height: 100vh;
 }
 
 /* NAVEGATION SIDEBAR */
@@ -175,8 +119,29 @@ li a {
     background-color: rgba(255, 255, 255, 0.9);
     scale: 1.05;
 }
+/* RESPONSIVENESS */
 
-/* For mobile view */
+/* For mobile devices- background */
+@media (max-width: 768px) {
+    #home-background, #calculator-background {
+        background-size: cover;
+        background-position: center;
+        height: auto; /* Adjust height if needed */
+        min-height: 100vh;
+    }
+}
+
+/* For smaller screens - background */
+@media (max-width: 480px) {
+    #home-background, #calculator-background {
+        background-size: cover;
+        background-position: center;
+        height: auto; /* Adjust height if needed */
+        min-height: 100vh;
+    }
+}
+
+/* For mobile view - sidebar */
 @media (max-width: 768px) {
     .sidebar {
         position: fixed;
