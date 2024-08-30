@@ -1,4 +1,55 @@
-/* fonts
+
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/*fonts
+.ubuntu-light {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ubuntu-medium {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ubuntu-bold {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ubuntu-light-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ubuntu-regular-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ubuntu-medium-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ubuntu-bold-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
 
 */
 
@@ -9,7 +60,10 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1px;
 }
 .sidebar-icons {
     width: 50px;
@@ -47,6 +101,8 @@
 .user a p {
     display: none;
     color: black;
+    font-weight: 600;
+    font-size: 1.3rem;
 }
 .user a {
     display: flex;
@@ -61,6 +117,8 @@
 }
 .user a p {
     margin-left: 15px;
+    font-weight: 500;
+    font-size: 1.1rem;
 }
 .sidebar li {
     background-color: rgba(255, 255, 255, 0.1);
@@ -117,4 +175,4 @@ li a {
     background-color: rgba(255, 255, 255, 0.9);
     scale: 1.05;
 }
-/* HOVER EFFECT FOR LINKS */ 
+
