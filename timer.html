@@ -18,7 +18,7 @@
     <link rel="mask-icon" href="favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    
+
 </head>
 <body id="home-background">
     
@@ -91,7 +91,11 @@
                     <button class="btn operator" id="stop-alarm-btn">Stop Alarm</button>
                 </div>
             </div>
-            <audio id="alarm-sound" src="/audio/alarm-audio.mp3" preload="auto"></audio>
+            <audio id="alarm-sound" preload="auto">
+                <source src="audio/alarm-audio.mp3" type="audio/mpeg">
+                <source src="audio/alarm-audio.aac" type="audio/aac">
+                Your browser does not support the audio element.
+            </audio>
             <script src="js/timer.js"></script>
         </div>
         
