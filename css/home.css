@@ -1,4 +1,4 @@
-.active {
+.actived {
     background-color: rgba(255, 255, 255, 1);
 }
 
@@ -37,61 +37,6 @@
     color: white;
 }
 
-/* Responsive layout adjustments */
-@media (max-width: 768px) {
-    /* Adjust sidebar for tablets and smaller screens */
-    .sidebar {
-        width: 60px;
-        padding: 20px 0;
-    }
-    .sidebar:hover {
-        width: 150px;
-        padding: 20px 10px;
-    }
-    .sidebar-icons {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Adjust layout for mobile phones */
-    .sidebar {
-        width: 50px;
-        padding: 15px 0;
-    }
-    .sidebar:hover {
-        width: 120px;
-        padding: 15px 8px;
-    }
-    .sidebar-icons {
-        width: 35px;
-        height: 35px;
-    }
-    .header {
-        height: auto;
-    }
-    main {
-        padding: 20px;
-    }
-}
-
-@media (min-width: 1024px) {
-    /* Adjust layout for large screens or TVs */
-    .sidebar {
-        width: 100px;
-        padding: 40px 0;
-    }
-    .sidebar:hover {
-        width: 250px;
-        padding: 40px 20px;
-    }
-    .sidebar-icons {
-        width: 60px;
-        height: 60px;
-    }
-}
-
 /* Flexbox for the main content to make it more flexible */
 main {
     display: flex;
@@ -106,7 +51,6 @@ main {
     .clock {
         width: 250px;
         height: 125px;
-        border-radius: 80px;
     }
     .time {
         font-size: 3rem;
@@ -115,12 +59,11 @@ main {
 
 @media (max-width: 480px) {
     .clock {
-        width: 100px;
-        height: 50px;
-        border-radius: 60px;
-    }
+        width: 50%;
+        height: 10%;
+        border-radius: 10px;    }
     .time {
-        font-size: 1rem;
+        font-size: 2.2rem;
     }
 }
 

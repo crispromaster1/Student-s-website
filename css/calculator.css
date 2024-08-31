@@ -1,17 +1,18 @@
-.active {
+.actived {
     background-color: rgba(255, 255, 255, 1);
 }
-
 
 .container {
     display: flex;
     align-items: flex-start;
-    position: absolute;
+    justify-content: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     user-select: none;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    padding: 20px; /* Add some padding for better appearance on mobile */
 }
 
 .calculator {
@@ -20,8 +21,10 @@
     border-radius: 15px;
     box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.5);
     padding: 20px;
-    width: 320px;
-    margin-right: 20px; /* Space between calculator and history */
+    width: 100%;
+    max-width: 320px; /* Set a maximum width */
+    margin: 10px; /* Adjust margin for better spacing */
+    box-sizing: border-box;
 }
 
 .display {
@@ -42,12 +45,14 @@
     width: 100%;
     outline: none;
     text-align: right;
+    box-sizing: border-box;
 }
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
+    width: 100%;
 }
 
 .btn {
@@ -56,7 +61,7 @@
     border-radius: 10px;
     color: #fff;
     font-size: 1.5em;
-    padding: 20px;
+    padding: 15px; /* Adjusted padding for responsiveness */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
@@ -80,12 +85,16 @@
 .operator:hover {
     background-color: #ffab4d;
 }
+
 .history {
     background-color: #f9f9f9;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    width: 200px; /* Set a fixed width for the history */
+    width: 100%;
+    max-width: 200px; /* Set a maximum width */
+    margin: 10px; /* Adjust margin for better spacing */
+    box-sizing: border-box;
 }
 
 .history h2 {
@@ -107,6 +116,7 @@
     color: #333;
     font-size: 1.2em;
 }
+
 #clear-history-btn {
     margin-top: 20px;
     width: 100%;
@@ -122,4 +132,44 @@
 
 #clear-history-btn:hover {
     background-color: #ff7961;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: center;
+    }
+
+    .calculator {
+        margin-right: 0;
+    }
+
+    .history {
+        max-width: 100%; /* Allow the history to take full width */
+    }
+
+    .buttons {
+        grid-template-columns: repeat(4, 1fr); /* Keep the button grid intact */
+    }
+
+    .btn {
+        padding: 15px; /* Adjust padding for smaller screens */
+        font-size: 1.3em; /* Adjust font size for buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    #calc-display {
+        font-size: 1.5em; /* Reduce font size on smaller screens */
+    }
+
+    .btn {
+        padding: 10px; /* Further adjust padding for very small screens */
+        font-size: 1.2em; /* Further adjust font size for buttons */
+    }
+
+    .history h2 {
+        font-size: 1.2em; /* Reduce font size for history heading */
+    }
 }

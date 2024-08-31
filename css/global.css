@@ -144,28 +144,42 @@ li a {
 /* For mobile view - sidebar */
 @media (max-width: 768px) {
     .sidebar {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
         position: fixed;
         left: -250px;
-        width: 250px;
+        width: 20% !important;
         height: 100vh;
         opacity: 1;
-        padding: 30px 15px;
+        padding: 0;
         transition: all 0.3s ease-in-out;
+        z-index: 999;
+        user-select: none !important;
+        background-color: black;
     }
-    
+    .sidebar:hover p{
+        display: none !important;
+    }
+    .sidebar p {
+        display: none !important;
+    }
     /* When the sidebar is active */
     .sidebar.active {
         left: 0;
+    }
+    .actived {
+        background-color: #FF8C00;
     }
 
     /* Hamburger menu styling */
     .hamburger {
         display: block;
-        font-size: 30px;
+        font-size: 60px;
         cursor: pointer;
         background: transparent;
         border: none;
-        color: black;
+        color: rgb(255, 255, 255);
         position: absolute;
         top: 15px;
         left: 15px;
