@@ -107,6 +107,9 @@ body {
 }
 
 @media (max-width: 768px) {
+    body {
+        height: 110vh;
+    }
     .main-content {
         margin-left: 0; /* Remove margin for small screens */
         padding: 10px; /* Add padding for smaller screens */
