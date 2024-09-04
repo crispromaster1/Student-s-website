@@ -1,57 +1,56 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const display = document.getElementById('calc-display');
-    const buttons = document.querySelectorAll('.btn');
+let history = [];
+
+function appendToDisplay(value) {
+    const display = document.getElementById('display');
+    if (value === 'sqrt(' || value === 'log(') {
+        display.value += value;
+    } else if (value === '!') {
+        display.value += 'factorial(';
+    } else {
+        display.value += value;
+    }
+}
+
+function clearDisplay() {
+    document.getElementById('display').value = '';
+}
+
+function calculateResult() {
+    const display = document.getElementById('display');
+    let expression = display.value;
+
+    try {
+        // Handle special cases
+        expression = expression.replace(/sqrt\(([^)]+)\)/g, 'Math.sqrt($1)');
+        expression = expression.replace(/log\(([^)]+)\)/g, 'Math.log10($1)');
+        expression = expression.replace(/factorial\(([^)]+)\)/g, (match, p1) => factorial(parseInt(p1)));
+
+        // Evaluate the expression
+        const result = eval(expression);
+
+        // Add to history
+        addToHistory(`${expression} = ${result}`);
+
+        display.value = result;
+    } catch (e) {
+        display.value = 'Error';
+    }
+}
+
+function factorial(n) {
+    if (n < 0) return 'Error';
+    if (n === 0) return 1;
+    let result = 1;
+    for (let i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+function addToHistory(entry) {
+    history.push(entry);
     const historyList = document.getElementById('history-list');
-    const clearHistoryBtn = document.getElementById('clear-history-btn');
-
-    let history = [];
-
-    buttons.forEach(button => {
-        button.addEventListener('click', function () {
-            const value = this.getAttribute('data-value');
-
-            if (value === 'C') {
-                display.value = '';
-            } else if (value === '=') {
-                try {
-                    const result = eval(display.value);
-                    display.value = result;
-
-                    // Save to history
-                    addToHistory(display.value);
-
-                } catch {
-                    display.value = 'Error';
-                }
-            } else {
-                display.value += value;
-            }
-        });
-    });
-
-    clearHistoryBtn.addEventListener('click', function () {
-        history = []; // Clear the history array
-        updateHistoryDisplay(); // Update the display
-    });
-
-    function addToHistory(value) {
-        history.push(value);
-
-        // Keep the history to the last 10 results
-        if (history.length > 4) {
-            history.shift();
-        }
-
-        updateHistoryDisplay();
-    }
-
-    function updateHistoryDisplay() {
-        historyList.innerHTML = '';
-
-        history.forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item;
-            historyList.appendChild(li);
-        });
-    }
-});
+    const listItem = document.createElement('li');
+    listItem.textContent = entry;
+    historyList.appendChild(listItem);
+}

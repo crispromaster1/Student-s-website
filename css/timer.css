@@ -1,135 +1,89 @@
-.actived {
-    background-color: rgba(255, 255, 255, 1);
-}
 
-.container {
+.main-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Restrict maximum width for responsiveness */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    user-select: none;
-    padding: 20px;
+    padding: 20px; /* Add some padding */
+}
+
+#countdown-timer {
+    display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
-    max-width: 400px; /* Set a maximum width for larger screens */
-    box-sizing: border-box;
 }
 
-.timer {
-    background-color: rgba(0, 0, 0, 0.9);
-    border: 5px solid rgba(78, 78, 78, 0.3);
-    border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.5);
-    width: 100%; /* Ensure the timer takes up the full width of its container */
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.display {
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-}
-
-#timer-display {
-    width: 100%;
-    font-size: 2em;
-    text-align: center;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(5px);
-    color: black;
+#countdown, #stopwatch {
+    border: 1px solid #ccc;
     border-radius: 10px;
-    padding: 15px;
+    background-color: #fff; /* White background */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Max width for the countdown and stopwatch */
     box-sizing: border-box;
+    margin-bottom: 20px; /* Space between countdown and stopwatch */
 }
 
-.buttons {
+#countdown-display, #stopwatch-display {
+    font-size: 36px; /* Larger font size for better visibility */
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.toggle-buttons {
+    margin-top: 20px;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-    gap: 10px; /* Add space between buttons */
+    gap: 10px;
 }
 
-.btn {
-    flex: 1; /* Make buttons flexible to adapt to available space */
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 1.2em;
+.toggle-buttons .btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    text-align: center; /* Center the text in the buttons */
-    box-sizing: border-box;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s;
 }
 
-.btn.operator {
-    background-color: #ff7300;
+.toggle-buttons .btn:hover {
+    background-color: #0056b3;
 }
 
-.btn:hover {
-    background-color: #45a049;
-}
-
-.btn.operator:hover {
-    background-color: #ff7961;
-}
-
-/* Media Queries for Responsiveness */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        padding: 10px; /* Reduce padding on smaller screens */
-        max-width: 100%; /* Allow the container to take full width */
+    #countdown-display, #stopwatch-display {
+        font-size: 28px; /* Adjust font size for smaller screens */
     }
 
-    #timer-display {
-        font-size: 1.5em; /* Adjust font size for smaller screens */
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-
-    .btn {
-        font-size: 1em; /* Adjust button font size for smaller screens */
-        padding: 8px; /* Adjust button padding for smaller screens */
+    .toggle-buttons .btn {
+        font-size: 16px; /* Slightly smaller font size for buttons */
     }
 }
 
 @media (max-width: 480px) {
-    #timer-display {
-        font-size: 1.2em; /* Further reduce font size on very small screens */
-        padding: 8px; /* Further reduce padding for smaller screens */
+    #countdown-display, #stopwatch-display {
+        font-size: 24px; /* Further adjust font size for very small screens */
     }
 
-    .btn {
-        font-size: 0.9em; /* Further adjust button font size */
-        padding: 7px; /* Further adjust button padding */
+    .toggle-buttons .btn {
+        font-size: 14px; /* Further adjust font size for buttons */
+        padding: 8px 16px; /* Adjust padding for smaller screens */
     }
-}
-.tabs {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
 
-.tab {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-    background-color: #444;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.tab:hover {
-    background-color: #555;
-}
-
-.tab:active {
-    background-color: #666;
+    #countdown, #stopwatch {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
 }

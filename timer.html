@@ -20,23 +20,16 @@
     <meta name="theme-color" content="#ffffff">
 
 </head>
-<body id="home-background">
-    
+<body class="background">
     <!--HEADER, background: -->
 
     <div class="header">
         <button class="hamburger">&#9776;</button> <!-- Hamburger menu -->
         <div class="sidebar">
-            <div class="user">
-                <a href=""><img src="icons/user.png" class="user-img sidebar-icons"><p>Login</p></a>
-            </div>
             <ul>
                 <li><a href="index.html"><img src="icons/home.png" class="sidebar-icons"><p>Home</p></a></li>
                 <li><a href="calculator.html"><img src="icons/calculator.png" class="sidebar-icons"><p>Calculator</p></a></li>
-                <li><a href="timer.html"  class="actived"><img src="icons/timer.png" class="sidebar-icons"><p>Timer</p></a></li>
-            </ul>
-            <ul>
-                <li><a href=""><img src="icons/logout.png" class="sidebar-icons"><p>Logout</p></a></li>
+                <li class="actived" ><a href="timer.html"><img src="icons/timer.png" class="sidebar-icons"><p>Timer</p></a></li>
             </ul>
         </div>
     </div>
@@ -49,59 +42,27 @@
 
     <!--END OF HEADER-->
 
-    <!--MAIN CONTENT-->
-    <main>
-
-        <!--TIMER, STOPWATCH AND ALARM-->
-        <div class="container">
-            <div class="tabs">
-                <button class="tab" id="timer-tab">Timer</button>
-                <button class="tab" id="stopwatch-tab">Stopwatch</button>
-                <button class="tab" id="alarm-tab">Alarm</button>
+    <div class="main-content">
+        <div id="countdown-timer">
+            <div id="countdown" class="hidden">
+                <h2>Countdown</h2>
+                <input type="number" id="countdown-input" placeholder="Seconds" />
+                <button class="btn" onclick="startCountdown()">Start Countdown</button>
+                <div id="countdown-display">00:00</div>
             </div>
-        
-            <div class="timer" id="timer-section">
-                <div class="display">
-                    <input type="text" id="timer-display" value="00:00:00" disabled>
-                </div>
-                <div class="buttons">
-                    <button class="btn operator" id="start-btn">Start</button>
-                    <button class="btn operator" id="stop-btn">Stop</button>
-                    <button class="btn operator" id="reset-btn">Reset</button>
-                </div>
+            <div id="stopwatch" class="hidden">
+                <h2>Timer</h2>
+                <button class="btn" onclick="startStopwatch()">Start Timer</button>
+                <button class="btn" onclick="stopStopwatch()">Stop Timer</button>
+                <button class="btn" onclick="resetStopwatch()">Reset Timer</button>
+                <div id="stopwatch-display">00:00:00</div>
             </div>
-        
-            <div class="stopwatch" id="stopwatch-section" style="display: none;">
-                <div class="display">
-                    <input type="text" id="stopwatch-display" value="00:00:00" disabled>
-                </div>
-                <div class="buttons">
-                    <button class="btn operator" id="start-stopwatch-btn">Start</button>
-                    <button class="btn operator" id="stop-stopwatch-btn">Stop</button>
-                    <button class="btn operator" id="reset-stopwatch-btn">Reset</button>
-                </div>
-            </div>
-        
-            <div class="alarm" id="alarm-section" style="display: none;">
-                <div class="display">
-                    <input type="time" id="alarm-time" value="00:00">
-                </div>
-                <div class="buttons">
-                    <button class="btn operator" id="set-alarm-btn">Set Alarm</button>
-                    <button class="btn operator" id="stop-alarm-btn">Stop Alarm</button>
-                </div>
-            </div>
-            <audio id="alarm-sound" preload="auto">
-                <source src="audio/alarm-audio.mp3" type="audio/mpeg">
-                <source src="audio/alarm-audio.aac" type="audio/aac">
-                Your browser does not support the audio element.
-            </audio>
-            <script src="js/timer.js"></script>
         </div>
-        
-
-
-    </main>
-    <!--END OF MAIN CONTENT-->
+        <div class="toggle-buttons">
+            <button class="btn" onclick="showCountdown()">Countdown</button>
+            <button class="btn" onclick="showStopwatch()">Timer</button>
+        </div>
+    </div>
+    <script src="js/timer.js"></script>
 </body>
 </html>

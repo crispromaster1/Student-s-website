@@ -16,7 +16,7 @@
 }
 
 /* BACKGROUND */
-#home-background, #calculator-background { 
+#home-background, .background { 
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -210,7 +210,7 @@ li a {
 
 /* For tablets and smaller devices */
 @media (max-width: 768px) {
-    #home-background, #calculator-background {
+    #home-background, .background {
         background-size: cover;
         background-position: center;
         height: auto;
@@ -268,7 +268,7 @@ li a {
 
 /* For mobile devices */
 @media (max-width: 480px) {
-    #home-background, #calculator-background {
+    #home-background, .background {
         background-size: cover;
         background-position: center;
         height: auto;

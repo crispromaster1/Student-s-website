@@ -1,175 +1,134 @@
-.actived {
-    background-color: rgba(255, 255, 255, 1);
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+.main-content {
+    margin-left: 250px; /* Space for the sidebar */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.container {
+.calculator-container {
     display: flex;
+    flex-direction: row; /* Horizontal layout by default */
     align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    user-select: none;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    padding: 20px; /* Add some padding for better appearance on mobile */
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px; /* Adjust width as needed */
 }
 
 .calculator {
-    background-color: rgba(0, 0, 0, 0.9);
-    border: 5px solid rgba(78, 78, 78, 0.3);
-    border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.5);
-    padding: 20px;
-    width: 100%;
-    max-width: 320px; /* Set a maximum width */
-    margin: 10px; /* Adjust margin for better spacing */
-    box-sizing: border-box;
-}
-
-.display {
-    width: 100%;
-    background-color: rgba(14, 14, 14, 0.7);
+    border: 1px solid #ccc;
     border-radius: 10px;
-    margin-bottom: 20px;
-    text-align: right;
     padding: 20px;
-    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
 }
 
-#calc-display {
-    border: none;
-    background: none;
-    color: #fff;
-    font-size: 2em;
+#display {
     width: 100%;
-    outline: none;
+    height: 50px;
+    font-size: 24px;
     text-align: right;
+    padding: 10px;
     box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    width: 100%;
+    gap: 10px;
 }
 
 .btn {
-    background-color: #1e1e1e;
+    padding: 20px;
+    font-size: 18px;
     border: none;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 1.5em;
-    padding: 15px; /* Adjusted padding for responsiveness */
+    border-radius: 5px;
+    background-color: #e0e0e0;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-}
-
-.btn:active {
-    transform: scale(0.95);
-}
-
-.operator {
-    background-color: #ff7300;
-}
-
-.operator.clear {
-    background-color: #f44336;
+    transition: background-color 0.3s;
 }
 
 .btn:hover {
-    background-color: #444;
-}
-
-.operator:hover {
-    background-color: #ffab4d;
+    background-color: #d0d0d0;
 }
 
 .history {
-    background-color: #f9f9f9;
+    border: 1px solid #ccc;
     border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 200px; /* Set a maximum width */
-    margin: 10px; /* Adjust margin for better spacing */
-    box-sizing: border-box;
+    max-width: 300px; /* Adjust width as needed */
+    max-height: 400px; /* Adjust height as needed */
+    overflow-y: auto; /* Scroll if content overflows */
 }
 
-.history h2 {
-    margin: 0;
-    font-size: 1.5em;
-    color: #333;
+.history h3 {
+    margin-top: 0;
 }
 
-.history ul {
+#history-list {
     list-style-type: none;
-    padding-left: 0;
+    padding: 0;
+    margin: 0;
 }
 
-.history ul li {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #eee;
-    border-radius: 5px;
-    color: #333;
-    font-size: 1.2em;
+#history-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
 }
 
-#clear-history-btn {
-    margin-top: 20px;
-    width: 100%;
-    padding: 10px;
-    background-color: #f44336;
-    color: #fff;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .main-content {
+        margin-left: 200px; /* Adjust margin for smaller sidebar */
+    }
 }
 
-#clear-history-btn:hover {
-    background-color: #ff7961;
+@media (max-width: 992px) {
+    .main-content {
+        margin-left: 180px; /* Adjust margin for smaller sidebar */
+    }
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Stack elements vertically on smaller screens */
-        align-items: center;
+    .main-content {
+        margin-left: 0; /* Remove margin for small screens */
+        padding: 10px; /* Add padding for smaller screens */
     }
 
-    .calculator {
-        margin-right: 0;
+    .calculator-container {
+        flex-direction: column; /* Stack history and calculator vertically */
+        align-items: stretch; /* Stretch the items to fill the width */
     }
 
     .history {
-        max-width: 100%; /* Allow the history to take full width */
-    }
-
-    .buttons {
-        grid-template-columns: repeat(4, 1fr); /* Keep the button grid intact */
-    }
-
-    .btn {
-        padding: 15px; /* Adjust padding for smaller screens */
-        font-size: 1.3em; /* Adjust font size for buttons */
+        width: 100%; /* Full width on smaller screens */
+        max-width: none; /* Remove max-width restriction */
     }
 }
 
-@media (max-width: 480px) {
-    #calc-display {
-        font-size: 1.5em; /* Reduce font size on smaller screens */
+@media (max-width: 576px) {
+    .calculator {
+        max-width: 100%; /* Ensure calculator fits within screen width */
     }
 
-    .btn {
-        padding: 10px; /* Further adjust padding for very small screens */
-        font-size: 1.2em; /* Further adjust font size for buttons */
-    }
-
-    .history h2 {
-        font-size: 1.2em; /* Reduce font size for history heading */
+    .history {
+        max-height: 300px; /* Adjust history panel height */
     }
 }
